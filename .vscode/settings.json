@@ -1,0 +1,69 @@
+{
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Default High Contrast",
+
+  // Terminal
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontWeight": "100",
+  "terminal.integrated.fontFamily": "Fira Code",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+
+  "workbench.sideBar.location": "right",
+
+  // Editor
+  "editor.fontFamily": "Fira Code,Consolas,'Courier New',monospace",
+  "editor.fontWeight": "100",
+  "editor.tabSize": 2,
+  "editor.fontSize": 21,
+  "editor.fontLigatures": true,
+  "editor.wordWrap": "on",
+  "editor.minimap.renderCharacters": false,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorStyle": "line",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    "source.fixAll": true
+  },
+
+  // Icon Theme
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.folders.color": "#7900FF",
+  "material-icon-theme.folders.theme": "specific",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+
+  // Window
+  "window.zoomLevel": -2,
+  // Css class
+  "html-css-class-completion.enableEmmetSupport": true,
+
+  // Python
+  "python.formatting.provider": "black",
+
+  // Braket
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+
+  // Django
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  },
+  "django.i18n": true,
+  "django.showContributeNotification": true,
+  "django.snippets.use": true,
+  "[django-html]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  }
+}
