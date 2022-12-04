@@ -1,14 +1,15 @@
-Env
-  - py -m venv env
-  - python -m pip freeze > requirements.txt
-  - python -m pip install -r requirements.txt
+- Env
+- py -m venv env
+- pip install fastapi uvicorn harperdb
+- python -m pip freeze > requirements.txt
+- python -m pip install -r requirements.txt
 
-FastApi
-  - uvicorn app:main --reload
+- FastApi
+- uvicorn app:main --reload
 
-ReactJS
-  - npx create-react-app frontend
-  - npm install react-routre-dom
-  - npm start
-      Local: http://localhost:3000
-      Network: http://192.168.43.204:3000
+- ReactJS
+- npm create vite@latest
+- npm install react-routre-dom
+- npm run dev
+  Local:
+  Network:
