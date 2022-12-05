@@ -2,16 +2,19 @@ import React, { useState, useEffect } from 'react';
 import ListItem from '../components/ListItem';
 import { Link } from 'react-router-dom';
 
-let dummyData = [
-  { id: '1', body: 'Post 01' },
-  { id: '2', body: 'Post 02' },
-  { id: '3', body: 'Post 03' },
-  { id: '4', body: 'Post 04' },
-  { id: '5', body: 'Post 05' },
-];
-
 const Notes = () => {
-  let [notes, setNote] = useState(dummyData);
+  let [notes, setNote] = useState([]);
+
+  useEffect(() => {
+    getNotes();
+  }, []);
+
+  let getNotes = async () => {
+    let response = await fetch('http://127.0.0.1:8000/notes');
+    let data = await response.json();
+    setNote(data);
+  };
+
   return (
     <div className=''>
       <Link to={'/add'}>Add</Link>

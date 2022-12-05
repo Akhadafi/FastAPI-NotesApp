@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-let dummyData = [
-  { id: '1', body: 'Post 01' },
-  { id: '2', body: 'Post 02' },
-  { id: '3', body: 'Post 03' },
-  { id: '4', body: 'Post 04' },
-  { id: '5', body: 'Post 05' },
-];
-
 const Note = ({ match }) => {
   let params = useParams();
   let noteId = params.id;
 
-  let foundNote = dummyData.find((note) => note.id === noteId);
+  // let foundNote = dummyData.find((note) => note.id === noteId);
 
-  let [note, setNote] = useState(foundNote);
+  let [note, setNote] = useState(null);
+
+  useEffect(() => {
+    if (noteId !== 'add') getNote();
+  }, [noteId]);
+
+  let getNote = async () => {
+    let response = await fetch(`http://127.0.0.1:8000/notes/${noteId}`);
+    let data = await response.json();
+    setNote(data);
+  };
 
   return (
     <div>
