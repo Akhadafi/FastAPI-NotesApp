@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ListItem = () => {
+const ListItem = ({ note }) => {
   return (
-    <div>
-      <h1>ListItem</h1>
+    <div className=''>
+      <Link to={`/${note.id}`}>{note.body}</Link>
     </div>
   );
 };
