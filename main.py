@@ -27,3 +27,10 @@ def addNotes(data=Body()):
     db.insert("notesapp", "notes", [{"body": data["body"]}])
     notes = db.search_by_value("notesapp", "notes", "id", "*", get_attributes=["*"])
     return notes
+
+
+@app.put("/notes/{id}")
+def updateNotes(pk: str, data=Body()):
+    db.update("notesapp", "notes", [{"id": pk, "body": data["body"]}])
+    notes = db.search_by_value("notesapp", "notes", "id", "*", get_attributes=["*"])
+    return notes
