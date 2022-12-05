@@ -16,6 +16,12 @@ def getNotes():
     return notes
 
 
+@app.get("/notes/{id}")
+def getNote(pk: str):
+    notes = db.search_by_hash("notesapp", "notes", [pk])
+    return notes[0]
+
+
 @app.post("/notes")
 def addNotes(data=Body()):
     db.insert("notesapp", "notes", [{"body": data["body"]}])
