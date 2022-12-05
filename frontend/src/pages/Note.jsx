@@ -40,10 +40,18 @@ const Note = ({ match }) => {
     navigate('/');
   };
 
+  let deleteNote = async (e) => {
+    e.preventDefault();
+    await fetch(`http://127.0.0.1:8000/notes/${params.id}`, {
+      method: 'DELETE',
+    });
+    navigate('/');
+  };
+
   return (
     <div>
       <Link to={'/'}>Go Back</Link>
-      {noteId !== 'add' && <button>Delete</button>}
+      {noteId !== 'add' && <button onClick={deleteNote}>Delete</button>}
       <textarea
         onChange={(e) => {
           setNote({ ...note, body: e.target.value });
