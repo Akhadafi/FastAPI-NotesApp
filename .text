@@ -6,6 +6,7 @@
 
 - FastApi
 - uvicorn app:main --reload
+- http://127.0.0.1:8000/docs#/
 
 - ReactJS
 - npm create vite@latest
