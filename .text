@@ -10,7 +10,7 @@
 
 - ReactJS
 - npm create vite@latest
-- npm install react-routre-dom
+- npm install react-router-dom
 - npm run dev
   Local:
   Network:
