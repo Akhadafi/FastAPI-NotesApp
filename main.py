@@ -34,3 +34,10 @@ def updateNotes(pk: str, data=Body()):
     db.update("notesapp", "notes", [{"id": pk, "body": data["body"]}])
     notes = db.search_by_value("notesapp", "notes", "id", "*", get_attributes=["*"])
     return notes
+
+
+@app.delete("/notes/{id}")
+def deleteNotes(pk: str):
+    db.delete("notesapp", "notes", [pk])
+    notes = db.search_by_value("notesapp", "notes", "id", "*", get_attributes=["*"])
+    return notes
